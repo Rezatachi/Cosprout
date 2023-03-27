@@ -1,13 +1,13 @@
 import React from 'react'
 import Navbar from '@/components/navbar'
-import Team_L from '@/components/team_layout'
+import Impact_L from '@/components/impact_layout'
 import styles from '@/styles/Home.module.css'
 
 const Team = () => {
     return (
         <main className={styles.main}>
           <Navbar/>
-          <Team_L/>
+          <Impact_L/>
         </main>
       )
 }

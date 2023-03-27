@@ -34,7 +34,7 @@ export default function Navbar () {
                         <li>
                         <a
                             className="text-white transition hover:text-gray-500/75"
-                            href="/"
+                            href="/impact"
                         >
                             Impact
                         </a>
@@ -42,7 +42,7 @@ export default function Navbar () {
                         <li>
                         <a
                             className="text-white transition hover:text-gray-500/75"
-                            href="/"
+                            href="/resources"
                         >
                             Resources
                         </a>
@@ -50,7 +50,7 @@ export default function Navbar () {
                         <li>
                         <a
                             className="text-white transition hover:text-gray-500/75"
-                            href="/"
+                            href="/community"
                         >
                             Community
                         </a>
@@ -58,7 +58,7 @@ export default function Navbar () {
                         <li>
                         <a
                             className="text-white transition hover:text-gray-500/75"
-                            href="/"
+                            href="/contact"
                         >
                             Contact
                         </a>
