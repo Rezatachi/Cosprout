@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Navbar () {
     return (
         <header aria-label="Site Header" className="bg-emerald-500">
@@ -13,26 +15,26 @@ export default function Navbar () {
                     <nav aria-label="Site Nav">
                     <ul className="flex items-center gap-6 text-sm">
                         <li>
-                        <a
+                        <Link
                             className="text-white transition hover:text-gray-500/75"
                             href="/"
                         >
                             About
-                        </a>
+                        </Link>
                         </li>
                         <li>
-                        <a
+                        <Link
                             className="text-white transition hover:text-gray-500/75"
-                            href="/"
+                            href="/team"
                         >
                             Team
-                        </a>
+                        </Link>
                         </li>
 
                         <li>
                         <a
                             className="text-white transition hover:text-gray-500/75"
-                            href="/"
+                            href="/impact"
                         >
                             Impact
                         </a>
@@ -40,7 +42,7 @@ export default function Navbar () {
                         <li>
                         <a
                             className="text-white transition hover:text-gray-500/75"
-                            href="/"
+                            href="/resources"
                         >
                             Resources
                         </a>
@@ -48,7 +50,7 @@ export default function Navbar () {
                         <li>
                         <a
                             className="text-white transition hover:text-gray-500/75"
-                            href="/"
+                            href="/community"
                         >
                             Community
                         </a>
@@ -56,7 +58,7 @@ export default function Navbar () {
                         <li>
                         <a
                             className="text-white transition hover:text-gray-500/75"
-                            href="/"
+                            href="/contact"
                         >
                             Contact
                         </a>
