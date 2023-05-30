@@ -1,0 +1,82 @@
+{% extends "cosprout/base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+      <form action="/createUser" method="POST">
+        <div style="margin-bottom: -20px; margin-top: 30px;" class="title-wrapper">
+          <h1 class="page-title">Sign Up</h1>
+        </div>
+
+        {% csrf_token %}
+        <span class="input">
+          <input type="text" name="username" class="input-field" required></input>
+            <label class="input-label"><span class="input-label-content">Username</span></label>
+        </span>
+        <span id="username-error" class="hidden-error-message">
+          Please fill out this field!
+        </span>
+        <span class="input">
+          <input type="email" name="email" class="input-field" required></input>
+          <label class="input-label"><span class="input-label-content">Email</span></label>
+        </span>
+        <span id="email-error" class="hidden-error-message">
+          Please fill out this field with a valid email!
+        </span>
+        <span class="input">
+          <input type="text" name="firstName" class="input-field" required></input>
+          <label class="input-label"><span class="input-label-content">First Name</span></label>
+        </span>
+        <span id="firstName-error" class="hidden-error-message">
+          Please fill out this field!
+        </span>
+        <span class="input">
+          <input type="text" name="lastName" class="input-field" required></input>
+          <label class="input-label"><span class="input-label-content">Last Name</span></label>
+        </span>
+        <span id="lastName-error" class="hidden-error-message">
+          Please fill out this field!
+        </span>
+
+        <form action="/action_page.php">
+          <span class="input">
+            <input required type="password" id="password" name="password" class="input-field"
+                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                   title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                   ></input><label class="input-label">
+              <span class="input-label-content">Password</span></label>
+            <span id="passwordToggle" class="fa fa-fw fa-eye eye-vis"></span>
+          </span>
+
+          <div id="message">
+            <h6>Password must contain the following:</h6>
+            <span id="letter" class="invalid">A <b>lowercase</b> letter</span><br>
+            <span id="capital" class="invalid">A <b>capital (uppercase)</b> letter</span><br>
+            <span id="number" class="invalid">A <b>number</b></span><br>
+            <span id="length" class="invalid">Minimum <b>8 characters</b></span><br>
+          </div>
+          <span id="password-error" class="hidden-error-message">
+            Please fill out this field with a valid password!
+          </span>
+
+          <span class="input">
+            <input required type="password" id="confirmedPassword" name="confirmedPassword" class="input-field"></input>
+            <label class="input-label"><span class="input-label-content">Confirm Password</span></label>
+          </span>
+          <span id="confirmedPassword-error" class="hidden-error-message">
+            Please make sure passwords are filled out and match!
+          </span>
+
+          <p class="errorMessage">{{ error_message }}</p>
+          <div class="row">
+            <div class="col-sm-12">
+              <input id="login-btn" type="submit" name="submit" value="Sign Up"
+                     class="btn submit-button" />
+            </div>
+          </div>
+          {% for message in messages%}
+            <p><strong>{{ message }}</strong></p>
+          {% endfor %}
+        </form>
+      </form>
+{% endblock %}

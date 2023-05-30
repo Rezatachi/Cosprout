@@ -1,0 +1,58 @@
+{% extends "cosprout/base.html" %}
+{% load static %}
+
+{% if error_message %}
+  <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+  <form id="login-form" method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <div
+         style="margin-bottom: -20px; margin-top: 30px;"
+         class="title-wrapper">
+      <h1 class="page-title">Log In</h1>
+      <p
+         style="text-align:center; font-weight:bold; color:rgb(220, 55, 55); margin-bottom:50px; margin-top:50px;">
+        {{message}}
+      </p>
+
+    </div>
+    <span class="input"><input type="text" name="username" class="input-field" /><label
+             class="input-label"><span
+              class="input-label-content">Username</span></label></span>
+
+    <span class="input">
+      <input id="password"
+             type="password"
+             name="password"
+             class="password input-field" />
+      <label for="password" class="input-label"><span
+              class="input-label-content">Password</span></label>
+      <span id="passwordToggle" class="fa fa-fw fa-eye eye-vis"></span>
+    </span>
+
+
+    {% if error_message %}<p class="error"><strong>{{ error_message }}</strong></p>{% endif %}
+    <div class="row">
+      <div class="col-sm-12">
+        <input id="login-btn"
+               type="submit"
+               name="submit"
+               value="Log In"
+               class="btn submit-button" />
+      </div>
+    </div>
+    <p style="text-align:center;">Don't have an account? <u><a href="/signup">Sign Up</a></u>
+    {% for message in messages%}
+      <p><strong>{{ message }}</strong></p>
+    {% endfor %}
+    </p>
+  </form>
+
+{% endblock %}
